@@ -16,7 +16,7 @@ export class PokemonService {
   public error: string = '';
 
   constructor(private readonly http: HttpClient) { 
-    this.pokemonCache$ = this.http.get<PokemonResponse>(`${pokeAPI}`)
+    this.pokemonCache$ = this.http.get<PokemonResponse>(`${pokeAPI}?limit=151`)
       .pipe(shareReplay(1));
   }
 

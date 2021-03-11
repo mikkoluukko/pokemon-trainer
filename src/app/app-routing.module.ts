@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { CatalogueComponent } from './components/catalogue/catalogue.component';
+import { SessionGuard } from './guards/session.guard';
 
 const routes: Routes = [
   {
@@ -10,12 +11,13 @@ const routes: Routes = [
   },
   {
     path: 'pokemon',
-    component: CatalogueComponent
+    component: CatalogueComponent,
+    canActivate: [ SessionGuard ]
   },
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: '/login '
+    redirectTo: '/login'
   },
   // {
   //   path: '*',
