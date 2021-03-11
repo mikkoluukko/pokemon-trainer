@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Pokemon } from 'src/app/models/pokemon.model';
+import { PokemonService } from 'src/app/services/pokemon.service';
 import { getStorage } from '../../utils/localStorage';
 
 @Component({
@@ -7,17 +9,21 @@ import { getStorage } from '../../utils/localStorage';
   templateUrl: './catalogue.component.html',
   styles: [
     `
-      label,
-      input {
-        display: block;
-        width: 100%;
-        margin-bottom: 1em;
-      }
     `,
   ],
 })
-export class CatalogueComponent {
+export class CatalogueComponent implements OnInit {
 
-  constructor(private router: Router) {}
+
+
+  constructor(private router: Router, private readonly pokemonService: PokemonService) {}
+
+  get pokemon(): Pokemon[] {
+    return this.pokemonService.pokemon;
+  }
+
+  ngOnInit(): void {
+    this.pokemonService.fetchPokemon();
+  }
 
 }
