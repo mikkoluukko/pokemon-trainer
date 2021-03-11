@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { setStorage } from '../../utils/localStorage';
 
@@ -25,7 +26,7 @@ export class LoginComponent {
     ]),
   });
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   get trainerName(): AbstractControl | null {
     return this.loginForm.get('trainerName');
@@ -33,5 +34,6 @@ export class LoginComponent {
 
   onLoginClick() {
     setStorage('trainerName', this.trainerName?.value);
+    this.router.navigate(['pokemon']);
   }
 }
