@@ -34,6 +34,7 @@ export class LoginComponent {
 
   onLoginClick() {
     setStorage('trainerName', this.trainerName?.value);
+    setStorage('collectedPokemon', [])
     this.router.navigate(['pokemon']);
   }
 }

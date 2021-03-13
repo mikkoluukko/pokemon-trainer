@@ -1,0 +1,10 @@
+<app-container>
+  <h1>Trainer Page</h1>
+  <h2>Pokemon Collection:</h2>
+  <ul>
+    <li *ngFor="let poke of collection">
+      <img [src]="poke.image" [alt]="poke.name" />
+      {{ poke.name }}
+    </li>
+  </ul>
+</app-container>

@@ -1,6 +1,9 @@
 <app-container>
   <h1>Pokemon Details</h1>
   <ng-container *ngIf="pokemon">
+    <button (click)="collectPokemon()">
+      Collect
+  </button>
     <app-pokemon-profile-header [pokemon]="pokemon"></app-pokemon-profile-header>
   </ng-container>  
 </app-container>

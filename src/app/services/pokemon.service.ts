@@ -47,5 +47,15 @@ export class PokemonService {
       image: `https:///raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`
     };
   }
+
+  getPokemonByName(name: string) {
+    let foundPokemon;
+    for (const poke of this.pokemon) {
+      if (poke.name === name) {
+        foundPokemon = poke;
+      }
+    }
+    return foundPokemon;
+  }  
   
 }

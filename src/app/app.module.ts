@@ -11,6 +11,7 @@ import { CatalogueComponent } from './components/catalogue/catalogue.component';
 import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-detail.component';
 import { PokemonProfileHeaderComponent } from './components/pokemon-detail/pokemon-profile-header.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { TrainerComponent } from './components/trainer/trainer.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     NavbarComponent,
     CatalogueComponent,
     PokemonDetailComponent,
-    PokemonProfileHeaderComponent
+    PokemonProfileHeaderComponent,
+    TrainerComponent
   ],
   imports: [
     BrowserModule,
