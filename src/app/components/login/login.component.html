@@ -9,11 +9,14 @@
       placeholder="Enter trainer name"
     />
 
-    <div *ngIf="trainerName?.invalid && (trainerName?.dirty || trainerName?.touched)">      
+    <div
+      *ngIf="
+        trainerName?.invalid && (trainerName?.dirty || trainerName?.touched)"
+    >
       <p *ngIf="trainerName?.errors?.minlength">Trainer name is too short</p>
       <p *ngIf="trainerName?.errors?.maxlength">Trainer name is too long</p>
     </div>
-    
+
     <button type="button" (click)="onLoginClick()">Login</button>
   </form>
 </app-container>

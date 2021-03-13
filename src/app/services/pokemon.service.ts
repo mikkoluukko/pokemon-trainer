@@ -32,7 +32,6 @@ export class PokemonService {
       )
       .subscribe(
         (pokemon: Pokemon[]) => {
-          console.log(pokemon);
           this.pokemon = pokemon;
         },
         (errorResponse: HttpErrorResponse) => {
@@ -42,9 +41,9 @@ export class PokemonService {
   }
 
   private getIdAndImage(url: string): any {
-    const id = url.split('/').filter(Boolean).pop();
+    const id = Number(url.split('/').filter(Boolean).pop());
     return {
-      id: Number(id),
+      id,
       image: `https:///raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`
     };
   }

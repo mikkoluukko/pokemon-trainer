@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { AppContainerComponent } from './shared/components/container/container.component';
 import { LoginComponent } from './components/login/login.component';
 import { CatalogueComponent } from './components/catalogue/catalogue.component';
+import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-detail.component';
+import { PokemonProfileHeaderComponent } from './components/pokemon-detail/pokemon-profile-header.component';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { CatalogueComponent } from './components/catalogue/catalogue.component';
     AppComponent,
     AppContainerComponent,
     LoginComponent,
-    CatalogueComponent
+    CatalogueComponent,
+    PokemonDetailComponent,
+    PokemonProfileHeaderComponent
   ],
   imports: [
     BrowserModule,
