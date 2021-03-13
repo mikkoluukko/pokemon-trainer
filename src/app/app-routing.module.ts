@@ -24,7 +24,7 @@ const routes: Routes = [
     path: 'pokemon/:name',
     component: PokemonDetailComponent,
     canActivate: [ SessionGuard ]
-  }
+  },
   // {
   //   path: '*',
   //   component: NotFoundComponent

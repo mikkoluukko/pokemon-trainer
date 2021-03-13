@@ -10,6 +10,7 @@ import { LoginComponent } from './components/login/login.component';
 import { CatalogueComponent } from './components/catalogue/catalogue.component';
 import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-detail.component';
 import { PokemonProfileHeaderComponent } from './components/pokemon-detail/pokemon-profile-header.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { PokemonProfileHeaderComponent } from './components/pokemon-detail/pokem
     AppComponent,
     AppContainerComponent,
     LoginComponent,
+    NavbarComponent,
     CatalogueComponent,
     PokemonDetailComponent,
     PokemonProfileHeaderComponent
