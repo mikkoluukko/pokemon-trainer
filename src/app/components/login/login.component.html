@@ -1,22 +1,26 @@
 <app-container>
-  <form [formGroup]="loginForm">
-    <label for="trainer-name" aria-label="Trainer name">Trainer name:</label>
-    <input
-      id="trainer-name"
-      name="trainer-name"
-      formControlName="trainerName"
-      type="text"
-      placeholder="Enter trainer name"
-    />
-
-    <div
-      *ngIf="
-        trainerName?.invalid && (trainerName?.dirty || trainerName?.touched)"
-    >
-      <p *ngIf="trainerName?.errors?.minlength">Trainer name is too short</p>
-      <p *ngIf="trainerName?.errors?.maxlength">Trainer name is too long</p>
-    </div>
-
-    <button type="button" (click)="onLoginClick()">Login</button>
-  </form>
+  <div class="d-flex justify-content-center">
+    <form [formGroup]="loginForm">
+      <label for="trainer-name" aria-label="Trainer name">Trainer name:</label>
+      <input
+        class="my-3"
+        id="trainer-name"
+        name="trainer-name"
+        formControlName="trainerName"
+        type="text"
+        placeholder="Enter trainer name"
+      />
+    
+      <div
+        *ngIf="trainerName?.invalid && (trainerName?.dirty || trainerName?.touched)"
+      >
+        <p *ngIf="trainerName?.errors?.minlength">Trainer name is too short</p>
+        <p *ngIf="trainerName?.errors?.maxlength">Trainer name is too long</p>
+      </div>
+    
+      <button type="button" (click)="onLoginClick()">Login</button>
+    </form>
+  </div>
+  
 </app-container>
+

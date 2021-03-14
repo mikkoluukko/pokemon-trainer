@@ -4,18 +4,9 @@ import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/fo
 import { setStorage } from '../../utils/localStorage';
 
 @Component({
-  selector: 'app-login-component',
+  selector: 'login-component',
   templateUrl: './login.component.html',
-  styles: [
-    `
-      label,
-      input {
-        display: block;
-        width: 100%;
-        margin-bottom: 1em;
-      }
-    `,
-  ],
+  styleUrls: ['./login.component.scss'], 
 })
 export class LoginComponent {
   loginForm: FormGroup = new FormGroup({

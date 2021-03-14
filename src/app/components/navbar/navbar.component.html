@@ -1,7 +1,8 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Pokemon Trainer</a>
-    <button
+    <a class="navbar-brand">Pokemon Trainer</a>
+    <div *ngIf="active">
+      <button
       class="navbar-toggler"
       type="button"
       data-bs-toggle="collapse"
@@ -20,6 +21,8 @@
         <button class="btn btn-sm btn-outline-secondary" type="button">Logout</button>
       </div>
     </div>
+    </div>
+    
     <!-- <div> -->
       <!-- <form class="container-fluid justify-content-start"> -->
         <!-- <button class="btn btn-outline-success me-2" type="button">Main button</button> -->
