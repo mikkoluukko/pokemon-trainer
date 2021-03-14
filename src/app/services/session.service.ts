@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { getStorage } from '../utils/localStorage';
+import { getStorage, clearStorage } from '../utils/localStorage';
 
 @Injectable({
   providedIn: 'root',
@@ -9,5 +9,9 @@ export class SessionService {
     const trainer = getStorage('trainerName');
 
     return Boolean(trainer);
+  }
+
+  logout(): void {
+    clearStorage();
   }
 }
