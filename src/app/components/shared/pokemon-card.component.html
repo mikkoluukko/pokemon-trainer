@@ -5,6 +5,8 @@
 >
   <img [src]="pokemon.image" class="card-img-top" [alt]="pokemon.name" />
   <div class="card-body">
-    <p class="card-title">{{ pokemon.name }}</p>
+    <p class="card-title">
+      {{ pokemon.name[0].toUpperCase() + pokemon.name.substring(1) }}
+    </p>
   </div>
 </div>
