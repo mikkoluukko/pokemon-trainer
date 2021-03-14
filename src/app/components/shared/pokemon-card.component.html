@@ -1,0 +1,10 @@
+<div
+  class="card m-2"
+  [routerLink]="['../pokemon', pokemon.name]"
+  style="width: 150px"
+>
+  <img [src]="pokemon.image" class="card-img-top" [alt]="pokemon.name" />
+  <div class="card-body">
+    <p class="card-title">{{ pokemon.name }}</p>
+  </div>
+</div>

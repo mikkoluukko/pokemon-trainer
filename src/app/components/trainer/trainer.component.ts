@@ -9,7 +9,7 @@ import { TrainerService } from 'src/app/services/trainer.service';
   styleUrls: ['./trainer.component.scss'],
 })
 export class TrainerComponent implements OnInit {
-  collection: Pokemon[] = [];
+  pokemonCollection: Pokemon[] = [];
 
   constructor(
     private readonly trainerService: TrainerService,
@@ -21,7 +21,7 @@ export class TrainerComponent implements OnInit {
     for (const name of collectedPokemonNames) {
       const poke = this.pokemonService.getPokemonByName(name);
       if (poke !== undefined) {
-        this.collection.push(poke);
+        this.pokemonCollection.push(poke);
       }
     }
   }

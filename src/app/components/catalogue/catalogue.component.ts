@@ -5,7 +5,7 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 import { getStorage } from '../../utils/localStorage';
 
 @Component({
-  selector: 'app-catalogue-component',
+  selector: 'catalogue-component',
   templateUrl: './catalogue.component.html',
   styles: [
     `
@@ -13,8 +13,6 @@ import { getStorage } from '../../utils/localStorage';
   ],
 })
 export class CatalogueComponent implements OnInit {
-
-
 
   constructor(private router: Router, private readonly pokemonService: PokemonService) {}
 

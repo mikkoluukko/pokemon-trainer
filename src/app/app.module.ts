@@ -12,6 +12,7 @@ import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-deta
 import { PokemonProfileHeaderComponent } from './components/pokemon-detail/pokemon-profile-header.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { TrainerComponent } from './components/trainer/trainer.component';
+import { PokemonCardComponent } from './components/shared/pokemon-card.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { TrainerComponent } from './components/trainer/trainer.component';
     LoginComponent,
     NavbarComponent,
     CatalogueComponent,
+    PokemonCardComponent,
     PokemonDetailComponent,
     PokemonProfileHeaderComponent,
     TrainerComponent

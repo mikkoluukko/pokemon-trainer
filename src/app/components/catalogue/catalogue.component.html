@@ -1,9 +1,6 @@
 <app-container>
   <h1>Pokemon Catalogue</h1>
-  <ul>
-    <li *ngFor="let poke of pokemon" [routerLink]="poke.name">
-      <img [src]="poke.image" [alt]="poke.name" />
-      {{ poke.name }}
-    </li>
-  </ul>
+  <div class="row row-cols-2 row-cols-sm-3 row-cols-sm-3 row-cols-md-4 row-cols-lg-6">
+    <pokemon-card-component *ngFor="let poke of pokemon" [pokemon]=poke></pokemon-card-component>   
+  </div>
 </app-container>
