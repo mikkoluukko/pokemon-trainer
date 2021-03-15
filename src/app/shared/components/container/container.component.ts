@@ -13,7 +13,7 @@ import { Component } from '@angular/core';
         max-width: 75em;
         width: 100%;
         margin: 0 auto;
-        padding: 60px 1.5em 0 1.5em;
+        padding: 55px 1.5em 0 1.5em;
       }
     `,
   ],

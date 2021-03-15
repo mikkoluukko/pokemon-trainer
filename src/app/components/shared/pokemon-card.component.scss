@@ -3,5 +3,18 @@
 }
 
 .card-body {
-  margin-top: -30px;
+  margin-top: -25px;
+  margin-bottom: -15px;
+}
+
+#id-tag {
+  background-color: #f8f9fa;
+  border: 1px solid silver;
+  text-align: center;
+  width: 30px;
+  height: 25px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 100;  
 }

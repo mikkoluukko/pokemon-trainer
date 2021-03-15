@@ -9,7 +9,7 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 })
 export class CatalogueComponent implements OnInit {
   public offset: number = 0;
-  public limitPerPage: number = 24;
+  public limitPerPage: number = 18;
 
   constructor(private readonly pokemonService: PokemonService) {}
 

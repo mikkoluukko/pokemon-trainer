@@ -3,12 +3,12 @@
   [routerLink]="['../pokemon', pokemon.name]"
   style="width: 150px"
 >
-  <img [src]="pokemon.image" class="card-img-top" [alt]="pokemon.name" />
+  <span id="id-tag">{{ pokemon.id }}</span>
+  <img [src]="pokemon.image" class="card-img-top mt-3" [alt]="pokemon.name" />
   <div class="card-img-overlay"></div>
   <div class="card-body">
     <p class="card-title">
       {{ pokemon.name[0].toUpperCase() + pokemon.name.substring(1) }}
     </p>
-    <p class="card-text">ID: {{ pokemon.id }}</p>
   </div>
 </div>

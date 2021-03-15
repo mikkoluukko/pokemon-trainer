@@ -1,4 +1,4 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+<nav class="navbar fixed-top navbar-expand-md navbar-light bg-light">
   <div class="container-fluid">
     <span class="navbar-brand">Pokemon Trainer</span>
     <div *ngIf="active">
@@ -15,8 +15,8 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link" routerLink="/pokemon">Pokemon Catalogue</a>
-          <a class="nav-link" routerLink="/trainer">Trainer Page</a>
+          <a class="nav-link" routerLink="/pokemon" [routerLinkActive]="['active']">Pokemon Catalogue</a>
+          <a class="nav-link" routerLink="/trainer" [routerLinkActive]="['active']">Trainer Page</a>
           <button
             class="btn btn-sm btn-outline-secondary"
             type="button"
