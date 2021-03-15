@@ -20,7 +20,7 @@ export class TrainerComponent implements OnInit {
     this.trainerName = this.sessionService.getTrainerName();
   }
 
-  get pokemonCollection(): Pokemon[] {
+  public get pokemonCollection(): Pokemon[] {
     return this.trainerService.collection;
   }
 }

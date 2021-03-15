@@ -6,7 +6,7 @@ import { setStorage, getStorage } from '../utils/localStorage';
   providedIn: 'root',
 })
 export class TrainerService implements OnInit {
-  collection: Pokemon[] = [];
+  public collection: Pokemon[] = [];
 
   ngOnInit(): void {
     this.collection = this.updateCollection();
@@ -20,7 +20,7 @@ export class TrainerService implements OnInit {
     this.updateCollection();
   }
 
-  public updateCollection() {
+  public updateCollection(): Pokemon[] {
     return getStorage('collectedPokemon');
   }
 

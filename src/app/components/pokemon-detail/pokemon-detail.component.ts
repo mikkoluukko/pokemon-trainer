@@ -26,11 +26,11 @@ export class PokemonDetailComponent implements OnInit {
     this.isInCollection = this.trainerService.isInCollection(this.pokemon);
   }
 
-  get pokemon(): Pokemon {
+  public get pokemon(): Pokemon {
     return this.pokemonDetailService.pokemon;
   }
 
-  collectPokemon(): void {
+  public collectPokemon(): void {
     this.trainerService.addToCollection(this.pokemon);
     this.isInCollection = this.trainerService.isInCollection(this.pokemon);
   }

@@ -13,7 +13,7 @@ export class CatalogueComponent implements OnInit {
 
   constructor(private readonly pokemonService: PokemonService) {}
 
-  get pokemon(): Pokemon[] {
+  public get pokemon(): Pokemon[] {
     return this.pokemonService.pokemon.slice(
       this.offset,
       this.offset + this.limitPerPage
@@ -24,11 +24,11 @@ export class CatalogueComponent implements OnInit {
     this.pokemonService.fetchPokemon();
   }
 
-  previousPage(): void {
+  public previousPage(): void {
     this.offset -= this.limitPerPage;
   }
 
-  nextPage(): void {
+  public nextPage(): void {
     this.offset += this.limitPerPage;
   }
 }

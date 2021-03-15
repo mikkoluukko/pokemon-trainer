@@ -13,11 +13,11 @@ export class NavbarComponent {
     public readonly router: Router
   ) {}
 
-  get active(): boolean {
+  public get active(): boolean {
     return this.sessionService.active();
   }
 
-  logout(): void {
+  public logout(): void {
     this.sessionService.logout();
     this.router.navigate(['login']);
   }

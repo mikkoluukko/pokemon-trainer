@@ -5,17 +5,17 @@ import { getStorage, clearStorage } from '../utils/localStorage';
   providedIn: 'root',
 })
 export class SessionService {
-  active(): boolean {
+  public active(): boolean {
     const trainer = getStorage('trainerName');
 
     return Boolean(trainer);
   }
 
-  getTrainerName(): string {
+  public getTrainerName(): string {
     return getStorage('trainerName');
   }
 
-  logout(): void {
+  public logout(): void {
     clearStorage();
   }
 }

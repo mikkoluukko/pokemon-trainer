@@ -21,7 +21,7 @@ export class PokemonService {
       .pipe(shareReplay(1));
   }
 
-  fetchPokemon(): void {
+  public fetchPokemon(): void {
     this.pokemonCache$
       .pipe(
         map((response: any) => {
@@ -47,15 +47,5 @@ export class PokemonService {
       id,
       image: `https:///raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`,
     };
-  }
-
-  getPokemonByName(name: string) {
-    let foundPokemon;
-    for (const poke of this.pokemon) {
-      if (poke.name === name) {
-        foundPokemon = poke;
-      }
-    }
-    return foundPokemon;
   }
 }
