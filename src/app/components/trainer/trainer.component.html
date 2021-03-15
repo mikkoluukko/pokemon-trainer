@@ -1,7 +1,12 @@
 <app-container>
   <h1>Trainer Page</h1>
-  <h2>Pokemon Collection:</h2>
-  <div class="row row-cols-1 row-cols-md-2">
-    <pokemon-card-component *ngFor="let pokemon of pokemonCollection" [pokemon]=pokemon></pokemon-card-component>   
+  <h2>{{ trainerName }}'s Pokemon Collection:</h2>
+  <div
+    class="row row-cols-2 row-cols-sm-3 row-cols-sm-3 row-cols-md-4 row-cols-lg-6"
+  >
+    <pokemon-card-component
+      *ngFor="let pokemon of pokemonCollection"
+      [pokemon]="pokemon"
+    ></pokemon-card-component>
   </div>
 </app-container>

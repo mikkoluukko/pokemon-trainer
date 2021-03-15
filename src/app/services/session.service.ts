@@ -11,6 +11,10 @@ export class SessionService {
     return Boolean(trainer);
   }
 
+  getTrainerName(): string {
+    return getStorage('trainerName');
+  }
+
   logout(): void {
     clearStorage();
   }

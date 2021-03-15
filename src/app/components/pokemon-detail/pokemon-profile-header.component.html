@@ -5,8 +5,8 @@
       [alt]="pokemon.name"
     />
   </aside>
-  <article>
-    <div class="base-stats">
+  <article class="row justify-content-between">
+    <div class="col-4">
       <h2>Base Stats:</h2>
       <h3>
         Name: {{ pokemon.name[0].toUpperCase() + pokemon.name.substring(1) }}
@@ -25,7 +25,7 @@
         </li>
       </ul>
     </div>
-    <div class="profile">
+    <div class="col-4">
       <h2>Profile:</h2>
       <h3>Height: {{ pokemon.height }}</h3>
       <h3>Weight: {{ pokemon.weight }}</h3>
@@ -40,7 +40,7 @@
       </ul>
       <h3>Base Experience: {{ pokemon.base_experience }}</h3>
     </div>
-    <div class="moves">
+    <div class="col-4">
       <h2>Moves:</h2>
       <ul>
         <li *ngFor="let move of pokemon.moves">

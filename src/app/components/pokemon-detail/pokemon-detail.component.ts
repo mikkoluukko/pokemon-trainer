@@ -12,6 +12,7 @@ import { TrainerService } from 'src/app/services/trainer.service';
 })
 export class PokemonDetailComponent implements OnInit {
   private readonly pokemonName: string | null = '';
+  public isInCollection: boolean = false;
 
   constructor(
     private readonly route: ActivatedRoute,
@@ -23,6 +24,7 @@ export class PokemonDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.pokemonDetailService.fetchPokemonByName(this.pokemonName);
+    this.isInCollection = this.trainerService.isInCollection(this.pokemon);
   }
 
   get pokemon(): Pokemon {
@@ -31,5 +33,6 @@ export class PokemonDetailComponent implements OnInit {
 
   collectPokemon(): void {
     this.trainerService.addToCollection(this.pokemon);
+    this.isInCollection = this.trainerService.isInCollection(this.pokemon);
   }
 }
