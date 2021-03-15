@@ -1,12 +1,17 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import {
+  AbstractControl,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { setStorage } from '../../utils/localStorage';
 
 @Component({
   selector: 'login-component',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'], 
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
   loginForm: FormGroup = new FormGroup({
@@ -25,7 +30,7 @@ export class LoginComponent {
 
   onLoginClick() {
     setStorage('trainerName', this.trainerName?.value);
-    setStorage('collectedPokemon', [])
+    setStorage('collectedPokemon', []);
     this.router.navigate(['pokemon']);
   }
 }

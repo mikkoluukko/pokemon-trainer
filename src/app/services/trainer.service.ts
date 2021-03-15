@@ -3,18 +3,18 @@ import { Pokemon } from '../models/pokemon.model';
 import { setStorage, getStorage } from '../utils/localStorage';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TrainerService implements OnInit {
   collection: Pokemon[] = [];
-  
+
   ngOnInit(): void {
     this.collection = this.updateCollection();
   }
 
   public addToCollection(pokemon: Pokemon) {
     if (!this.isInCollection(pokemon)) {
-      this.collection.push(pokemon);      
+      this.collection.push(pokemon);
     }
     setStorage('collectedPokemon', this.collection);
     this.updateCollection();

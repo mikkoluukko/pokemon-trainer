@@ -13,7 +13,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { TrainerComponent } from './components/trainer/trainer.component';
 import { PokemonCardComponent } from './components/shared/pokemon-card.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,15 +22,15 @@ import { PokemonCardComponent } from './components/shared/pokemon-card.component
     CatalogueComponent,
     PokemonCardComponent,
     PokemonDetailComponent,
-    TrainerComponent
+    TrainerComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

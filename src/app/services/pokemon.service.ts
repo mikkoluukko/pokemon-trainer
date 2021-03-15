@@ -5,18 +5,19 @@ import { environment } from 'src/environments/environment';
 import { Pokemon } from '../models/pokemon.model';
 import { PokemonResponse } from '../models/pokemon-response.model';
 
-const { pokeAPI } = environment
+const { pokeAPI } = environment;
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PokemonService {
   private readonly pokemonCache$: any;
   public pokemon: Pokemon[] = [];
   public error: string = '';
 
-  constructor(private readonly http: HttpClient) { 
-    this.pokemonCache$ = this.http.get<PokemonResponse>(`${pokeAPI}?limit=151`)
+  constructor(private readonly http: HttpClient) {
+    this.pokemonCache$ = this.http
+      .get<PokemonResponse>(`${pokeAPI}?limit=151`)
       .pipe(shareReplay(1));
   }
 
@@ -26,8 +27,8 @@ export class PokemonService {
         map((response: any) => {
           return response.results.map((pokemon: Pokemon) => ({
             ...pokemon,
-            ...this.getIdAndImage(pokemon.url)
-          }))
+            ...this.getIdAndImage(pokemon.url),
+          }));
         })
       )
       .subscribe(
@@ -37,14 +38,14 @@ export class PokemonService {
         (errorResponse: HttpErrorResponse) => {
           this.error = errorResponse.message;
         }
-      )
+      );
   }
 
   private getIdAndImage(url: string): any {
     const id = Number(url.split('/').filter(Boolean).pop());
     return {
       id,
-      image: `https:///raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`
+      image: `https:///raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`,
     };
   }
 
@@ -56,6 +57,5 @@ export class PokemonService {
       }
     }
     return foundPokemon;
-  }  
-  
+  }
 }

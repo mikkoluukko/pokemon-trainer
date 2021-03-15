@@ -7,4 +7,24 @@
       [pokemon]="poke"
     ></pokemon-card-component>
   </div>
+  <nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <li class="page-item">
+        <a
+          class="page-link"
+          *ngIf="offset >= limitPerPage"
+          (click)="previousPage()"
+          >Previous</a
+        >
+      </li>
+      <li class="page-item">
+        <a
+          class="page-link"
+          *ngIf="offset < 151 - limitPerPage"
+          (click)="nextPage()"
+          >Next</a
+        >
+      </li>
+    </ul>
+  </nav>
 </app-container>

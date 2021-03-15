@@ -10,7 +10,7 @@ import { SessionService } from 'src/app/services/session.service';
 export class NavbarComponent {
   constructor(
     private readonly sessionService: SessionService,
-    private readonly router: Router
+    public readonly router: Router
   ) {}
 
   get active(): boolean {
