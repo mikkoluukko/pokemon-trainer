@@ -30,6 +30,6 @@ export class PokemonDetailComponent implements OnInit {
   }
 
   collectPokemon(): void {
-    this.trainerService.addToCollection(this.pokemonName);
+    this.trainerService.addToCollection(this.pokemon);
   }
 }

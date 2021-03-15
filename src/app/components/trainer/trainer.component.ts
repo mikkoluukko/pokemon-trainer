@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Pokemon } from 'src/app/models/pokemon.model';
-import { PokemonService } from 'src/app/services/pokemon.service';
 import { TrainerService } from 'src/app/services/trainer.service';
 
 @Component({
@@ -8,21 +7,10 @@ import { TrainerService } from 'src/app/services/trainer.service';
   templateUrl: './trainer.component.html',
   styleUrls: ['./trainer.component.scss'],
 })
-export class TrainerComponent implements OnInit {
-  pokemonCollection: Pokemon[] = [];
+export class TrainerComponent {
+  constructor(private readonly trainerService: TrainerService) {}
 
-  constructor(
-    private readonly trainerService: TrainerService,
-    private readonly pokemonService: PokemonService
-  ) {}
-
-  ngOnInit(): void {
-    const collectedPokemonNames = this.trainerService.getCollection();
-    for (const name of collectedPokemonNames) {
-      const poke = this.pokemonService.getPokemonByName(name);
-      if (poke !== undefined) {
-        this.pokemonCollection.push(poke);
-      }
-    }
+  get pokemonCollection(): Pokemon[] {
+    return this.trainerService.collection;
   }
 }

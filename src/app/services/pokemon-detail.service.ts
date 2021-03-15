@@ -13,9 +13,7 @@ const { pokeAPI } = environment;
 export class PokemonDetailService {
   public pokemon!: Pokemon;
 
-  constructor(private readonly http: HttpClient) {
-
-  }
+  constructor(private readonly http: HttpClient) {}
 
   public fetchPokemonByName(name: string | null): void {
     this.http.get<Pokemon>(`${pokeAPI}/${name}`)

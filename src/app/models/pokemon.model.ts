@@ -10,7 +10,7 @@ export interface Pokemon {
   abilities?: PokemonAbility[];
   base_experience?: number;
   moves?: PokemonMove[];
-  sprites?: any[];
+  sprites?: any;
 }
 
 export interface PokemonType {
