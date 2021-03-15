@@ -11,14 +11,10 @@ export class TrainerService implements OnInit {
   ngOnInit(): void {
     this.collection = this.updateCollection();
   }
-  public collectedPokemonNames: string[] = [];
 
   public addToCollection(pokemon: Pokemon) {
     if (!this.isInCollection(pokemon)) {
-      this.collection.push(pokemon);
-      alert("Jes")
-    } else {
-      alert("This Pokemon has already been collected.")
+      this.collection.push(pokemon);      
     }
     setStorage('collectedPokemon', this.collection);
     this.updateCollection();
@@ -29,6 +25,6 @@ export class TrainerService implements OnInit {
   }
 
   public isInCollection(pokemon: Pokemon): boolean {
-    return this.collection.includes(pokemon)
+    return this.collection.some((poke) => poke.id === pokemon.id);
   }
 }

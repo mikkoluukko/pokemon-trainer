@@ -11,14 +11,16 @@ import { TrainerService } from 'src/app/services/trainer.service';
 export class TrainerComponent implements OnInit {
   public trainerName: string = '';
 
-  constructor(private readonly trainerService: TrainerService, private readonly sessionService: SessionService) {}
+  constructor(
+    private readonly trainerService: TrainerService,
+    private readonly sessionService: SessionService
+  ) {}
 
   ngOnInit(): void {
     this.trainerName = this.sessionService.getTrainerName();
   }
 
   get pokemonCollection(): Pokemon[] {
-    console.log(this.trainerService.collection);
     return this.trainerService.collection;
   }
 }

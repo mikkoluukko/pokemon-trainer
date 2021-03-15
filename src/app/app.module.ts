@@ -9,7 +9,6 @@ import { AppContainerComponent } from './shared/components/container/container.c
 import { LoginComponent } from './components/login/login.component';
 import { CatalogueComponent } from './components/catalogue/catalogue.component';
 import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-detail.component';
-import { PokemonProfileHeaderComponent } from './components/pokemon-detail/pokemon-profile-header.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { TrainerComponent } from './components/trainer/trainer.component';
 import { PokemonCardComponent } from './components/shared/pokemon-card.component';
@@ -24,7 +23,6 @@ import { PokemonCardComponent } from './components/shared/pokemon-card.component
     CatalogueComponent,
     PokemonCardComponent,
     PokemonDetailComponent,
-    PokemonProfileHeaderComponent,
     TrainerComponent
   ],
   imports: [
