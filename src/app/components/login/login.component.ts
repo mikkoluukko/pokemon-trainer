@@ -7,6 +7,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { setStorage } from '../../utils/localStorage';
+import { SessionService } from 'src/app/services/session.service';
 
 @Component({
   selector: 'login-component',
@@ -22,15 +23,19 @@ export class LoginComponent {
     ]),
   });
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private readonly sessionService: SessionService
+  ) {}
 
   get trainerName(): AbstractControl | null {
     return this.loginForm.get('trainerName');
   }
 
   onLoginClick() {
-    setStorage('trainerName', this.trainerName?.value);
-    setStorage('collectedPokemon', []);
+    this.sessionService.login(this.trainerName?.value);
+    // setStorage('trainerName', this.trainerName?.value);
+    // setStorage('collectedPokemon', []);
     this.router.navigate(['pokemon']);
   }
 }

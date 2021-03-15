@@ -12,12 +12,12 @@ export class TrainerService implements OnInit {
     this.collection = this.updateCollection();
   }
 
-  public addToCollection(pokemon: Pokemon) {
+  public addToCollection(pokemon: Pokemon): void {
     if (!this.isInCollection(pokemon)) {
       this.collection.push(pokemon);
     }
     setStorage('collectedPokemon', this.collection);
-    this.updateCollection();
+    this.collection = this.updateCollection();
   }
 
   public updateCollection(): Pokemon[] {
