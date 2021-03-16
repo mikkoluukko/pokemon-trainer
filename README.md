@@ -31,7 +31,7 @@ The app consists of the following main components:
 This is the screen that the user is first presented with and also the only one
 that can be accessed without logging in. The user must input a trainer name
 and then click on the login button to advance to Pokemon Catalogue Page.
-![login screen](https://github.com/mikkoluukko/pokemon-trainer/blob/master/readme-images/readme-image-1.png)
+<kbd><img src="https://github.com/mikkoluukko/pokemon-trainer/blob/master/readme-images/readme-image-1.png" />*Login Screen*</kbd>
 
 ### Navbar
 The Navbar is always displayed, however the navigation links and the logout
@@ -43,7 +43,7 @@ per page with navigation buttons for next and previous page at the bottom (when
 there are next and/or previous pages available). The cards display an image of
 a Pokemon, its name and its id. The cards are clickable and will redirect to
 the specific Pokemon's details page when clicked.
-![catalogue page](https://github.com/mikkoluukko/pokemon-trainer/blob/master/readme-images/readme-image-2.png)
+<kbd><img src="https://github.com/mikkoluukko/pokemon-trainer/blob/master/readme-images/readme-image-2.png" />*Catalogue Page*</kbd>
 
 ### Pokemon Details Page
 Each Pokemon has a details page where an alternative image of the Pokemon is 
@@ -53,12 +53,12 @@ there is a button that the user can use to add the Pokemon to their collection
 (or to remove the Pokemon from the collection if it has already been collected
 before). Text "COLLECTED!" is pasted on top of the image if the Pokemon has 
 been collected by the user.
-![pokemon details page](https://github.com/mikkoluukko/pokemon-trainer/blob/master/readme-images/readme-image-3.png)
+<kbd><img src="https://github.com/mikkoluukko/pokemon-trainer/blob/master/readme-images/readme-image-3.png" />*Pokemon Details Page*</kbd>
 
 ### Trainer Page
 The trainer page displays cards of all the Pokemon that the user has collected
 in a similar fashion as in the catalogue page.
-![trainer page](https://github.com/mikkoluukko/pokemon-trainer/blob/master/readme-images/readme-image-4.png)
+<kbd><img src="https://github.com/mikkoluukko/pokemon-trainer/blob/master/readme-images/readme-image-4.png" />*Trainer Page*</kbd>
 
 ## Usage
 The completed app can be used at [https://pokemon-trainer-mikkoluukko.vercel.app/](https://pokemon-trainer-mikkoluukko.vercel.app/)
