@@ -1,17 +1,47 @@
-h1 {
+.header {
   text-align: center;
 }
 
 img {
-  width: 300px;
+  width: 250px;
+  padding: 10px;
+  border: 1px solid silver;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-ul {
+#collected-tag {
+  width: 250px;
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: yellow;
+  font-size: small;
+  font-weight: 600;
+  padding: 1px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+li {
   list-style-type: none;
 }
 
 .stats {
   margin: 10px;
   text-align: center;
+  height: 350px;
+  border: 1px solid silver;
+  border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.section-header {
+  font-size: x-large;
+  font-weight: 600;
+}
+
+.stat-name {
+  font-weight: 600;
 }
