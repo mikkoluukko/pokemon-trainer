@@ -1,8 +1,8 @@
 <app-container>
   <ng-container *ngIf="pokemon">
     <div class="header my-4">
-      <div>
-        <span id="collected-tag" *ngIf="isInCollection">COLLECTED!</span>
+      <div class="image-container">
+        <p class="collected-tag" *ngIf="isInCollection">COLLECTED!</p>
         <img
           [src]="pokemon.sprites?.other.dream_world.front_default"
           [alt]="pokemon.name"
