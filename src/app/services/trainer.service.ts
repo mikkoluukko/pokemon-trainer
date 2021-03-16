@@ -7,7 +7,7 @@ import { setStorage, getStorage } from '../utils/localStorage';
 })
 export class TrainerService {
   public addToCollection(pokemon: Pokemon): void {
-    let collection = this.getCollection()
+    let collection = this.getCollection();
     if (!this.isInCollection(pokemon.name)) {
       collection.push(pokemon);
     }
@@ -20,5 +20,13 @@ export class TrainerService {
 
   public isInCollection(pokemonName: string): boolean {
     return this.getCollection().some((poke) => poke.name === pokemonName);
+  }
+
+  public removeFromCollection(pokemon: Pokemon): void {
+    let collection = this.getCollection();
+    collection = collection.filter((poke) => {
+      poke.name !== pokemon.name;
+    });
+    setStorage('collectedPokemon', collection);
   }
 }

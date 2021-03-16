@@ -3,6 +3,7 @@
   <ng-container *ngIf="pokemon">
     <button (click)="collectPokemon()" *ngIf="!isInCollection">Collect</button>
     <h3 class="text-success" *ngIf="isInCollection">Already collected!</h3>
+    <button (click)="removePokemon()" *ngIf="isInCollection">Remove</button>
     <aside>
       <img
         [src]="pokemon.sprites?.other.dream_world.front_default"

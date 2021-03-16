@@ -36,4 +36,9 @@ export class PokemonDetailComponent implements OnInit {
     this.trainerService.addToCollection(this.pokemon);
     this.isInCollection = this.trainerService.isInCollection(this.pokemonName);
   }
+
+  public removePokemon(): void {
+    this.trainerService.removeFromCollection(this.pokemon);
+    this.isInCollection = this.trainerService.isInCollection(this.pokemonName);
+  }
 }
