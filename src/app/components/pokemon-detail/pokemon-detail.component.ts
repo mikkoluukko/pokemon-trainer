@@ -10,7 +10,9 @@ import { TrainerService } from 'src/app/services/trainer.service';
   styleUrls: ['./pokemon-detail.component.scss'],
 })
 export class PokemonDetailComponent implements OnInit {
-  private readonly pokemonName: string | null = '';
+  // Use any because in theory oute.snapshot.paramMap.get('name') could result
+  // in null, but in practice this is always a string
+  private readonly pokemonName: any;
   public isInCollection: boolean = false;
 
   constructor(
@@ -19,11 +21,11 @@ export class PokemonDetailComponent implements OnInit {
     private readonly trainerService: TrainerService
   ) {
     this.pokemonName = this.route.snapshot.paramMap.get('name');
+    this.isInCollection = this.trainerService.isInCollection(this.pokemonName);
   }
 
   ngOnInit(): void {
-    this.pokemonDetailService.fetchPokemonByName(this.pokemonName);
-    this.isInCollection = this.trainerService.isInCollection(this.pokemon);
+    this.pokemonDetailService.fetchPokemonByName(this.pokemonName);    
   }
 
   public get pokemon(): Pokemon {
@@ -32,6 +34,6 @@ export class PokemonDetailComponent implements OnInit {
 
   public collectPokemon(): void {
     this.trainerService.addToCollection(this.pokemon);
-    this.isInCollection = this.trainerService.isInCollection(this.pokemon);
+    this.isInCollection = this.trainerService.isInCollection(this.pokemonName);
   }
 }

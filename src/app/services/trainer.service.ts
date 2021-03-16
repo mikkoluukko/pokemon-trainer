@@ -1,30 +1,24 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Pokemon } from '../models/pokemon.model';
 import { setStorage, getStorage } from '../utils/localStorage';
 
 @Injectable({
   providedIn: 'root',
 })
-export class TrainerService implements OnInit {
-  public collection: Pokemon[] = [];
-
-  ngOnInit(): void {
-    this.collection = this.updateCollection();
-  }
-
+export class TrainerService {
   public addToCollection(pokemon: Pokemon): void {
-    if (!this.isInCollection(pokemon)) {
-      this.collection.push(pokemon);
+    let collection = this.getCollection()
+    if (!this.isInCollection(pokemon.name)) {
+      collection.push(pokemon);
     }
-    setStorage('collectedPokemon', this.collection);
-    this.collection = this.updateCollection();
+    setStorage('collectedPokemon', collection);
   }
 
-  public updateCollection(): Pokemon[] {
+  public getCollection(): Pokemon[] {
     return getStorage('collectedPokemon');
   }
 
-  public isInCollection(pokemon: Pokemon): boolean {
-    return this.collection.some((poke) => poke.id === pokemon.id);
+  public isInCollection(pokemonName: string): boolean {
+    return this.getCollection().some((poke) => poke.name === pokemonName);
   }
 }

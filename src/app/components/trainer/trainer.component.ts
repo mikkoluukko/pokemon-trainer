@@ -10,6 +10,7 @@ import { TrainerService } from 'src/app/services/trainer.service';
 })
 export class TrainerComponent implements OnInit {
   public trainerName: string = '';
+  public pokemonCollection: Pokemon[] = [];
 
   constructor(
     private readonly trainerService: TrainerService,
@@ -18,9 +19,6 @@ export class TrainerComponent implements OnInit {
 
   ngOnInit(): void {
     this.trainerName = this.sessionService.getTrainerName();
-  }
-
-  public get pokemonCollection(): Pokemon[] {
-    return this.trainerService.collection;
+    this.pokemonCollection = this.trainerService.getCollection();
   }
 }
